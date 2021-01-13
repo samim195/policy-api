@@ -1,5 +1,8 @@
 # Notes and Assumptions made
 
+To get the sign in page its '/' or '/home'.
+Once you enter the username and password you will be routed to /policy.
+
 Components have been kept in App.js. I would usually create the components and import them but Ive decided for the purpose of this assessment I will keep it simple.
 
 I have used Axios for HTTP Requests. I haven't done any error handling or validation once keeping it pretty simple.
