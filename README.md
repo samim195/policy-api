@@ -1,3 +1,13 @@
+# Notes and Assumptions made
+
+Components have been kept in App.js. I would usually create the components and import them but Ive decided for the purpose of this assessment I will keep it simple.
+
+I have used Axios for HTTP Requests. I haven't done any error handling or validation once keeping it pretty simple.
+
+Spent under an hour on it. I remembered to add Routing.....almost forgot :).
+
+I have managed state using React Hooks and using functional components rather than class components.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
