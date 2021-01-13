@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.header {
+  padding-left: 10px;
+  width: 700px;
+}
+
+.resultsBox {
+  padding-top: 20px;
+  border: 10;
+  margin: 20px;
+}
