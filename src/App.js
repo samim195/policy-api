@@ -6,11 +6,8 @@ import { Route, Link } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 const App = () => {
-  const [policy_ref, updatePolicy] = useState('');
-  const [coverType, updateCover] = useState('');
-  const [car, updateCar] = useState('');
-  const [address, updateAddress] = useState('');
-  const [hide, updateHide] = useState(true);
+  const [dataArray, updateData] = useState({policy_ref: '', coverType: '',
+                   car: '', address: ''})
 
   function Login() {
     const username = document.getElementById('InputUsername').value
@@ -49,11 +46,8 @@ const App = () => {
         result.policy.address.postcode
         console.log(address);
         // const insertHtml = "<div"
-        updatePolicy(policyRef)
-        updateCover(coverType)
-        updateCar(car)
-        updateAddress(address)
-        updateHide(!hide)
+        updateData(prevInfo => ({...prevInfo, policy_ref: policyRef, coverType: coverType,
+        car: car, address: address}))
       });
     });
     
@@ -66,7 +60,7 @@ const App = () => {
     <div className="">
       <header className="header">
       </header>
-      <form className='header' style={{display: hide ? 'block' : 'none'}}>
+      <form className='header'>
       <h1>Sign In</h1>
         <div className='form-group'>
           <label>User Name</label>
@@ -89,24 +83,24 @@ const App = () => {
       </div>
       </Route>
       <Route path='/policy'>
-      <div id='output' style={{display: hide ? 'none' : 'block'}} className='resultsBox'>
+      <div id='output' className='resultsBox'>
       <div>
         <h2>My Policy</h2>
         <div>
           <h4>Policy reference:</h4>
-          <p>{policy_ref}</p>
+          <p>{dataArray.policy_ref}</p>
         </div>
         <div>
           <h4>Cover Type:</h4>
-          <p>{coverType}</p>
+          <p>{dataArray.coverType}</p>
         </div>
         <div>
           <h4>Car:</h4>
-          <p>{car}</p>
+          <p>{dataArray.car}</p>
         </div>
         <div>
           <h4>Address:</h4>
-          <p>{address}</p>
+          <p>{dataArray.address}</p>
         </div>
 
 
